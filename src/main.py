@@ -20,5 +20,5 @@ async def convert_number_to_text(request: NumberToTextRequest):
     Returns:
         dict: A dictionary containing the original number, its text representation, and the language used.
     """
-    number_text = convert_number_to_text_logic(request.number, request.language)
+    number_text = convert_number_to_text_logic(request.number, request.language, request.currency)
     return {"number": request.number, "text": number_text, "language": request.language}
