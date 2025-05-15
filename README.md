@@ -24,7 +24,8 @@ Converts a number to its text representation in the specified language.
 ```json
 {
     "number": 123,
-    "language": "en"
+    "language": "en",
+    "currency": "USD"
 }
 ```
 - `number` (required): The number to be converted.
@@ -34,7 +35,7 @@ Converts a number to its text representation in the specified language.
 ```json
 {
     "number": 123,
-    "text": "one hundred and twenty-three",
+    "text": "one hundred and twenty-three dollars",
     "language": "en"
 }
 ```
@@ -104,14 +105,14 @@ python -m pytest
 ```bash
 curl -X POST "http://127.0.0.1:8000/convert" \
 -H "Content-Type: application/json" \
--d '{"number": 123, "language": "en"}'
+-d '{"number": 123, "language": "en", "currency": "USD"}'
 ```
 
 ### Response:
 ```json
 {
     "number": 123,
-    "text": "one hundred and twenty-three",
+    "text": "one hundred and twenty-three dollars",
     "language": "en"
 }
 ```
